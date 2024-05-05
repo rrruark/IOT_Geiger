@@ -2491,7 +2491,7 @@ C2988620</description>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="R23" library="ruark2" deviceset="0603_RESISTOR" device="" value="10k"/>
 <part name="R24" library="ruark2" deviceset="0603_RESISTOR" device="" value="10k"/>
-<part name="C10" library="ruark2" deviceset="0603_CAPACITOR" device="" value="DNP"/>
+<part name="C10" library="ruark2" deviceset="0603_CAPACITOR" device="" value="0.1uF"/>
 <part name="C11" library="ruark2" deviceset="0603_CAPACITOR" device="" value="0.1uF"/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
@@ -2733,7 +2733,6 @@ Reset Circuitry</text>
 <text x="322.58" y="114.3" size="2.54" layer="97" align="center">High Voltage Power Supply</text>
 <text x="127" y="68.58" size="1.778" layer="91">TPS63000DRCR</text>
 <text x="154.94" y="96.52" size="1.778" layer="91">Rtop=27k*(3.3/0.5-1)=150k</text>
-<text x="175.26" y="132.08" size="1.778" layer="91">DNP C10. This fucked me. The ESP32 Devkit V4 Schematic has a hardware error by including this capacitor</text>
 </plain>
 <instances>
 <instance part="R16" gate="G$1" x="421.64" y="152.4" smashed="yes" rot="R270">

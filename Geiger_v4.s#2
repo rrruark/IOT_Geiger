@@ -2667,6 +2667,8 @@ C2988620</description>
 <part name="R53" library="ruark2" deviceset="0603_RESISTOR" device="" value="10"/>
 <part name="J5" library="ruark2" deviceset="01010002Z" device=""/>
 <part name="R50" library="ruark2" deviceset="ST-4ETB101" device="" value="100R"/>
+<part name="GND69" library="supply1" deviceset="GND" device=""/>
+<part name="R9" library="ruark2" deviceset="0603_RESISTOR" device="" value="10"/>
 </parts>
 <sheets>
 <sheet>
@@ -2734,6 +2736,7 @@ Reset Circuitry</text>
 <text x="127" y="68.58" size="1.778" layer="91">TPS63000DRCR</text>
 <text x="154.94" y="96.52" size="1.778" layer="91">Rtop=27k*(3.3/0.5-1)=150k</text>
 <text x="175.26" y="132.08" size="1.778" layer="91">DNP C10. This fucked me. The ESP32 Devkit V4 Schematic has a hardware error by including this capacitor</text>
+<text x="55.88" y="15.24" size="1.778" layer="91">EN is active low...</text>
 </plain>
 <instances>
 <instance part="R16" gate="G$1" x="421.64" y="152.4" smashed="yes" rot="R270">
@@ -3125,8 +3128,8 @@ Reset Circuitry</text>
 <instance part="GND41" gate="1" x="50.8" y="7.62" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="53.34" y="5.08" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="GND42" gate="1" x="27.94" y="7.62" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="30.48" y="5.08" size="1.778" layer="96" rot="MR0"/>
+<instance part="GND42" gate="1" x="20.32" y="7.62" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="22.86" y="5.08" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="GND45" gate="1" x="116.84" y="7.62" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="119.38" y="5.08" size="1.778" layer="96" rot="MR0"/>
@@ -3311,16 +3314,16 @@ Reset Circuitry</text>
 <instance part="+3V5" gate="G$1" x="421.64" y="172.72" smashed="yes">
 <attribute name="VALUE" x="419.1" y="167.64" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="C7" gate="G$1" x="27.94" y="17.78" smashed="yes" rot="MR0">
-<attribute name="NAME" x="26.416" y="20.701" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="26.416" y="15.621" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="C21" gate="G$1" x="20.32" y="17.78" smashed="yes" rot="MR0">
+<instance part="C7" gate="G$1" x="20.32" y="17.78" smashed="yes" rot="MR0">
 <attribute name="NAME" x="18.796" y="20.701" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="18.796" y="15.621" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="GND21" gate="1" x="20.32" y="7.62" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="22.86" y="5.08" size="1.778" layer="96" rot="MR0"/>
+<instance part="C21" gate="G$1" x="12.7" y="17.78" smashed="yes" rot="MR0">
+<attribute name="NAME" x="11.176" y="20.701" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="11.176" y="15.621" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="GND21" gate="1" x="12.7" y="7.62" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="15.24" y="5.08" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="C22" gate="G$1" x="116.84" y="33.02" smashed="yes" rot="MR0">
 <attribute name="NAME" x="115.316" y="35.941" size="1.778" layer="95" rot="MR0"/>
@@ -3492,6 +3495,13 @@ Reset Circuitry</text>
 <instance part="R50" gate="G$2" x="294.64" y="20.32" smashed="yes" rot="MR0">
 <attribute name="NAME" x="291.0586" y="16.51" size="1.778" layer="95" rot="MR90"/>
 <attribute name="VALUE" x="288.798" y="16.51" size="1.778" layer="96" rot="MR90"/>
+</instance>
+<instance part="GND69" gate="1" x="27.94" y="7.62" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="30.48" y="5.08" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="R9" gate="G$1" x="284.48" y="20.32" smashed="yes" rot="R90">
+<attribute name="NAME" x="282.9814" y="16.51" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="287.782" y="16.51" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -3674,7 +3684,7 @@ Reset Circuitry</text>
 <wire x1="50.8" y1="10.16" x2="50.8" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="27.94" y1="15.24" x2="27.94" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="15.24" x2="20.32" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="GND42" gate="1" pin="GND"/>
 <pinref part="C7" gate="G$1" pin="2"/>
 </segment>
@@ -3762,7 +3772,7 @@ Reset Circuitry</text>
 </segment>
 <segment>
 <pinref part="C21" gate="G$1" pin="2"/>
-<wire x1="20.32" y1="15.24" x2="20.32" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="15.24" x2="12.7" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="GND21" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -3849,7 +3859,18 @@ Reset Circuitry</text>
 <segment>
 <pinref part="R50" gate="G$2" pin="2"/>
 <pinref part="GND10" gate="1" pin="GND"/>
-<wire x1="294.64" y1="15.24" x2="294.64" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="294.64" y1="15.24" x2="294.64" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="294.64" y1="12.7" x2="294.64" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="294.64" y1="12.7" x2="284.48" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="12.7" x2="284.48" y2="15.24" width="0.1524" layer="91"/>
+<junction x="294.64" y="12.7"/>
+</segment>
+<segment>
+<pinref part="U7" gate="G$1" pin="EN"/>
+<wire x1="55.88" y1="38.1" x2="27.94" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="38.1" x2="27.94" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="GND69" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -3931,8 +3952,13 @@ Reset Circuitry</text>
 <wire x1="299.72" y1="20.32" x2="299.72" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="299.72" y1="27.94" x2="294.64" y2="27.94" width="0.1524" layer="91"/>
 <junction x="294.64" y="27.94"/>
-<wire x1="294.64" y1="43.18" x2="294.64" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="294.64" y1="43.18" x2="294.64" y2="30.48" width="0.1524" layer="91"/>
 <junction x="294.64" y="43.18"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="294.64" y1="30.48" x2="294.64" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="25.4" x2="284.48" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="30.48" x2="294.64" y2="30.48" width="0.1524" layer="91"/>
+<junction x="294.64" y="30.48"/>
 </segment>
 </net>
 <net name="SW" class="1">
@@ -4102,22 +4128,17 @@ Reset Circuitry</text>
 <label x="142.24" y="213.36" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
-<wire x1="10.16" y1="40.64" x2="20.32" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="40.64" x2="27.94" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="27.94" y1="40.64" x2="27.94" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="40.64" x2="12.7" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="40.64" x2="20.32" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="40.64" x2="20.32" y2="22.86" width="0.1524" layer="91"/>
 <label x="10.16" y="40.64" size="1.016" layer="95" rot="R180" xref="yes"/>
 <pinref part="U7" gate="G$1" pin="VIN"/>
-<wire x1="55.88" y1="40.64" x2="53.34" y2="40.64" width="0.1524" layer="91"/>
-<junction x="27.94" y="40.64"/>
-<pinref part="U7" gate="G$1" pin="EN"/>
-<wire x1="53.34" y1="40.64" x2="27.94" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="38.1" x2="53.34" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="38.1" x2="53.34" y2="40.64" width="0.1524" layer="91"/>
-<junction x="53.34" y="40.64"/>
+<junction x="20.32" y="40.64"/>
+<wire x1="55.88" y1="40.64" x2="20.32" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="C7" gate="G$1" pin="1"/>
 <pinref part="C21" gate="G$1" pin="1"/>
-<wire x1="20.32" y1="22.86" x2="20.32" y2="40.64" width="0.1524" layer="91"/>
-<junction x="20.32" y="40.64"/>
+<wire x1="12.7" y1="22.86" x2="12.7" y2="40.64" width="0.1524" layer="91"/>
+<junction x="12.7" y="40.64"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
